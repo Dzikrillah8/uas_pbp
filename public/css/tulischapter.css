@@ -1,0 +1,209 @@
+body {
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+}
+
+.atas {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.ini {
+    display: flex;
+    gap: 40px;
+}
+
+.itu {
+    display: flex;
+    gap: 10px;
+}
+
+.kembali {
+    color: black;
+    font-size: 25px;
+}
+
+.publik {
+    width: 125px;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    background: #fa812f;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.publik:hover {
+    background: #ffb22c;
+    color: black;
+    transition: all 0.2s ease-out;
+}
+
+.simpan {
+    width: 90px;
+    height: 35px;
+    border-radius: 20px;
+    border: 1px solid #fa812f;
+    background: white;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.simpan:hover {
+    border: 1px solid #ffb22c;
+    color: #ffb22c;
+    transition: all 0.2s ease-out;
+}
+
+.chapter-dropdown {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.dropdown-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border: none;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-toggle:after {
+    display: none !important;
+}
+
+.judul-cerita {
+    font-size: 15px;
+    color: #666;
+    font-weight: 500;
+}
+
+.judul-bab {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.dropdown-list {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 240px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    z-index: 100;
+    margin: 35px 73px;
+}
+
+.dropdown-list.active {
+    display: block;
+}
+
+.chapter-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+}
+
+.new-chapter {
+    margin-top: 10px;
+    width: 100%;
+    background: #fa812f;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tengah {
+    width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center; /* Bikin .tengah ke tengah */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.chap {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chap p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.chap hr {
+    width: 830px;
+    border: 1px solid #ccc;
+}
+
+.edit {
+    max-width: 70%;
+    width: auto;
+    text-align: center;
+    padding: 20px 5px 0 5px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+.tulis {
+    width: 100%;
+}
+
+.nulis {
+    width: 850px;
+    min-height: 500px;
+    padding: 0 20px;
+    margin: 30px auto;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.detail {
+    padding: 20px;
+    width: 630px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    gap: 15px;
+}
+
+.baru {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 30px 0;
+}

@@ -1,0 +1,232 @@
+body {
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+}
+
+.atas {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px 5px 30px;
+    background-color: white;
+    border-bottom: 2px solid rgb(223, 223, 223);
+    position: sticky;
+    top: 67px;
+}
+
+.ini {
+    display: flex;
+    gap: 40px;
+}
+
+.itu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.chapter-dropdown {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.dropdown-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border: none;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-toggle:after {
+    display: none !important;
+}
+
+.dropdown-toggle i {
+    position: absolute;
+    left: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.penulis {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.judul {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.dropdown-list {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 240px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    z-index: 100;
+    margin: 0 20px;
+}
+
+.dropdown-list.active {
+    display: block;
+}
+
+.chapter-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.tambah {
+    border-radius: 5px;
+    border: none;
+    width: 30px;
+    background-color: #fa812f;
+    color: white;
+    margin-right: 10px;
+}
+
+.tambah:hover {
+    background-color: #ffb22c;
+    color: black;
+    transition: all 0.2s ease-in-out;
+}
+
+.tengah {
+    max-width: 700px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.cerita h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.cerita p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.cerita hr {
+    border: 1px solid #ccc;
+}
+
+.isi-cerita p {
+    font-weight: 600;
+    text-align: left;
+}
+
+.lanjut {
+    margin-top: 50px;
+    text-align: center;
+    background-color: #fa812f;
+    height: 40px;
+    border-radius: 20px;
+    padding: 5px 0 0 0;
+}
+
+.lanjut a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.lanjut:hover,
+.lanjut a:hover {
+    background-color: #ffb22c;
+    color: black;
+}
+
+.komentar {
+    max-width: 660px;
+    width: 100%;
+    margin: 40px auto;
+}
+
+.tuliskomen {
+    display: flex;
+    gap: 3px;
+}
+
+.tuliskomen textarea {
+    width: 100%;
+    height: 40px;
+    padding: 7px 15px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    resize: none;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.tuliskomen button {
+    width: 45px;
+    padding: 8px 0;
+    border: none;
+    border-radius: 20px;
+    background: #fa812f;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tuliskomen button:hover {
+    background-color: #ffb22c;
+    color: black;
+    transition: all 0.2s ease-in-out;
+}
+
+.listkomen {
+    margin-top: 25px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+    width: 100%;
+    gap: 15px;
+}
+
+.isikomen {
+    display: flex;
+    flex-direction: column;
+}
+
+.username p {
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.comment {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.komen::placeholder {
+    font-size: 15px;
+    font-weight: 500;
+}

@@ -1,0 +1,88 @@
+body {
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+}
+
+h1 {
+    margin: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.koleksi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px 80px;
+}
+
+.hasil {
+    flex: 0 0 calc(16.66% - 20px);
+    max-width: 190px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.hasil:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.cover {
+    position: relative;
+    overflow: hidden;
+}
+
+.cover img {
+    width: 170px;
+    min-width: 100px;
+    height: auto;
+    border-radius: 5px;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.isi {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.judul {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.penulis {
+    font-size: 12px;
+}
+
+.judul p,
+.penulis p {
+    margin: 0;
+    padding: 0;
+}
+
+.status {
+    display: flex;
+    padding: 0 0 0 10px;
+    height: 20px;
+    background-color: rgb(188, 188, 188);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 70px;
+    border-radius: 20px;
+}

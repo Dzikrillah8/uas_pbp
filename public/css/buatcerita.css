@@ -1,0 +1,142 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+.new {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    border-bottom: 1px solid gray;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
+
+.new .kiri {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.new .kanan {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.batalkan {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 35px;
+    padding-top: 7px;
+    border-radius: 5px;
+    background-color: #fa812f;
+    border: none;
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+}
+
+.batalkan:hover {
+    background-color: #ffb22c;
+    font-size: 13px;
+    padding-bottom: 10px;
+    transition: all 0.2s ease-out;
+}
+
+.baru {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 30px 0;
+}
+
+.detail {
+    padding: 20px;
+    width: 630px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    gap: 15px;
+}
+
+.detail1 {
+    padding-top: 20px;
+    border-bottom: 2px solid;
+}
+
+.detail input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.btn-group {
+    gap: 20px;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.dropdown-toggle {
+    border: 1px solid #ccc;
+}
+
+.fixed-textarea {
+    max-width: 555px;
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+
+    overflow: auto;
+    resize: none;
+}
+
+.buat button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fa812f;
+    border-radius: 5px;
+    max-width: 150px;
+    width: 100%;
+    height: 35px;
+    border: none;
+}
+
+.buat button:hover {
+    background-color: #ffb22c;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+    .detail {
+        padding: 20px;
+        width: 450px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .fixed-textarea {
+        width: 410px;
+    }
+}

@@ -1,0 +1,202 @@
+body {
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+}
+
+.daftar {
+    display: flex;
+    align-items: center;
+    width: 170px;
+    height: 45px;
+    padding: 10px 16px;
+    border-radius: 100px;
+    background: black;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cerita {
+    display: flex;
+    flex-direction: column;
+    width: 605px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.ceritAtas {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ceritAtas h4 {
+    font-weight: bold;
+}
+
+.buatCerita {
+    display: flex;
+    align-items: center;
+    width: 125px;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 8px;
+    background: #fa812f;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    gap: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.buatCerita:hover {
+    background: #ffb22c;
+    font-size: 13px;
+    padding-left: 15px;
+    transition: all 0.2s ease-out;
+}
+
+.ceritaSaya {
+    width: 607px;
+    height: auto;
+    padding-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.ceritaSaya .card {
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 120px;
+    height: 170px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.barisCerita {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.detailCerita {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.lagi {
+    display: flex;
+    gap: 40px;
+}
+
+.button {
+    display: flex;
+    margin: 20px;
+    gap: 3px;
+}
+
+.lanjutnulis {
+    display: flex;
+    padding: 6px 0 0 10px;
+    width: 145px;
+    height: 35px;
+    border-radius: 8px;
+    background-color: #fa812f;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.lanjutnulis:hover {
+    background-color: #ffb22c;
+    color: black;
+    transition: all 0.2s ease-out;
+}
+
+.hapus {
+    padding-top: 2.5px;
+    background-color: #fa812f;
+    border: none;
+    border-radius: 8px;
+    color: white;
+}
+
+.form-hapus {
+    padding-top: 2.5px;
+    background-color: #fa812f;
+    border: none;
+    border-radius: 8px;
+    color: white;
+}
+
+.hapus:hover {
+    background-color: #ffb22c;
+    color: black;
+    transition: all 0.2s ease-out;
+}
+
+.judul h5 {
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 0;
+    margin: 0;
+}
+
+.draft {
+    display: flex;
+    font-weight: bold;
+    color: gray;
+    gap: 8px;
+}
+
+.publik {
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    border-radius: 5px;
+    color: white;
+    height: 19px;
+    padding: 0 6px 0 6px;
+    margin-top: 3px;
+}
+
+.publik p {
+    font-size: 12px;
+}
+
+.privat p {
+    font-size: 15px;
+}
+
+.swal2-popup .swal2-confirm,
+.swal2-popup .swal2-cancel {
+    all: unset;
+    display: inline-block;
+    background-color: #fa812f;
+    color: white;
+    font-size: 16px;
+    padding: 0.5em 1.2em;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.2;
+    min-width: 80px;
+    box-sizing: border-box;
+}
+
+.swal2-popup .swal2-confirm:hover {
+    background-color: #ffb22c;
+}
+
+.swal2-popup .swal2-cancel:hover {
+    background-color: #888;
+}
+
+@media only screen and (max-width: 768px) {
+}

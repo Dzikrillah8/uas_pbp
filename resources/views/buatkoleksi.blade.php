@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buat Koleksi - PustakaRia</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],  
+                    },
+                    colors: {
+                        // Palet Warna  
+                        'primary-color': '#FA812F',     
+                        'primary-text': '#241b00',      
+                        'secondary-text': '#797772',    
+                        'border-default': '#e2e2e2',    
+                        'cta-main': '#FA812F', 
+                        'cta-hover': '#e6742a',  
+                        
+                        'dark-bg': '#121212',
+                        'dark-card': '#1f1f1f',
+                        'dark-text': '#f0f0f0',
+                        'dark-secondary-text': '#b3b3b3',
+                        'dark-border': '#333333',
+                    },
+                    boxShadow: {
+                        'header-shadow': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.02)',
+                    },
+                }
+            },
+        }
+    </script>
+    
+</head>
+
+<body class="bg-gray-50 dark:bg-dark-bg font-sans min-h-screen transition-colors duration-300">
+    
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
+    <header class="header sticky top-0 z-40 bg-white dark:bg-dark-card w-full shadow-header-shadow flex items-center justify-between px-4 sm:px-8 py-3 border-b border-border-default dark:border-dark-border">
+      <div class="kiri flex items-center">
+        <nav class="menu flex text-lg sm:text-base font-medium">
+            <a class="nav-link text-primary-color transition duration-200 flex items-center space-x-1 p-2 rounded-lg" href="/home"><i class="bi bi-house-door-fill text-xl sm:text-lg"></i><span class="hidden sm:inline font-semibold text-sm">BERANDA</span></a>
+            <a class="nav-link text-secondary-text dark:text-dark-secondary-text hover:text-primary-color dark:hover:text-primary-color transition duration-200 flex items-center space-x-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-border/50" href="/search">
+                <i class="bi bi-search text-xl sm:text-lg"></i>
+                <span class="hidden sm:inline font-semibold text-sm">CARI</span></a>
+            <a class="nav-link text-secondary-text dark:text-dark-secondary-text hover:text-primary-color dark:hover:text-primary-color transition duration-200 flex items-center space-x-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-border/50" href="/perpus"><i class="bi bi-book text-xl sm:text-lg"></i><span class="hidden sm:inline font-semibold text-sm">KOLEKSI</span></a>
+        </nav>
+      </div>
+      <div class="kanan relative flex items-center space-x-4 sm:space-x-6"> 
+        <i id="darkModeToggle" class="bi bi-moon text-2xl text-primary-text dark:text-dark-text cursor-pointer hover:text-primary-color transition duration-200 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-dark-border/50"></i>
+        <a class="profile w-10 h-10 sm:w-[43px] sm:h-[43px] rounded-full overflow-hidden border-2 border-gray-300 hover:border-primary-color transition duration-200 block dark:border-dark-border dark:hover:border-primary-color" href="#">
+          <img src="{{ $user->pic ? asset('storage/' . $user->pic->pic_path) . '?t=' . time() : asset('images/default.png') }}" alt="user" class="w-full h-full object-cover">
+        </a>
+        <div class="dropdown-menu absolute bg-white dark:bg-dark-card mt-1 w-48 rounded-lg shadow-2xl border border-border-default dark:border-dark-border overflow-hidden top-[60px] right-0 z-50 transition-all duration-200 hidden flex-col" data-dropdown>
+          <a href="/myprofile" class="block p-3 text-primary-text dark:text-dark-text hover:bg-gray-100 dark:hover:bg-dark-border transition duration-150 text-sm font-medium">
+            <i class="bi bi-person-circle mr-2"></i> Lihat Profil
+          </a>
+          <hr class="my-0 border-border-default dark:border-dark-border">
+          <a href="/story/create" class="block p-3 text-primary-text dark:text-dark-text hover:bg-gray-100 dark:hover:bg-dark-border transition duration-150 text-sm font-medium">
+            <i class="bi bi-pencil-square mr-2"></i> Buat Cerita
+          </a>
+          <a href="/mystory" class="block p-3 text-primary-text dark:text-dark-text hover:bg-gray-100 dark:hover:bg-dark-border transition duration-150 text-sm font-medium">
+            <i class="bi bi-journal-text mr-2"></i> Cerita Saya
+          </a>
+          <form action="/logout" method="post">
+            @csrf
+            <button type="submit"
+              class="w-full text-left block p-3 text-primary-text dark:text-dark-text hover:bg-gray-100 dark:hover:bg-dark-border transition duration-150 text-sm font-medium">
+              <i class="bi bi-box-arrow-right mr-2"></i> Logout
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+    
+    <div class="container mx-auto px-4 flex justify-center items-center min-h-[75vh]">
+        <div class="buat flex flex-col w-full max-w-md bg-white dark:bg-dark-card shadow-lg dark:shadow-xl border border-border-default dark:border-dark-border/50 rounded-xl p-6 sm:p-8 gap-6">
+            
+            <div class="atas border-b-2 border-border-default dark:border-dark-border pb-3">
+                <h5 class="text-xl font-bold text-primary-text dark:text-dark-text">Buat Koleksi</h5>
+            </div>
+
+            <div class="isi">
+                <form method="post" action="/perpus" class="koleksi flex flex-col gap-4">
+                  @csrf
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-primary-text dark:text-dark-text mb-2">Nama Koleksi</label>
+                        <input type="text" id="name" name="name" required 
+                        class="w-full p-2 border border-border-default dark:border-dark-border rounded-lg focus:ring-primary-color focus:border-primary-color dark:bg-dark-bg dark:text-dark-text transition duration-200"
+                        placeholder="Masukkan Nama Koleksi" required value="{{ old('name') }}">
+                        @error('name')
+                          <div class="invalid-feedback">
+                            {{ $message }}
+                          </div>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <label for="slug" class="block text-sm font-medium text-primary-text dark:text-dark-text mb-2">Nama Koleksi</label>
+                        <input type="text" id="slug" name="slug" required 
+                        class="w-full p-2 border border-border-default dark:border-dark-border rounded-lg focus:ring-primary-color focus:border-primary-color dark:bg-dark-bg dark:text-dark-text transition duration-200"
+                        placeholder="Slug Otomatis" required value="{{ old('slug') }}">
+                        @error('slug')
+                          <div class="invalid-feedback">
+                            {{ $message }}
+                          </div>
+                        @enderror
+                    </div>
+
+                    <div class="btn mt-4">
+                        <button type="submit" 
+                                class="bg-primary-color text-white font-bold rounded-lg w-full max-w-[150px] h-10 transition duration-200 
+                                       hover:bg-cta-hover hover:scale-105 active:bg-cta-main">
+                            Buat Koleksi
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const profileLink = document.querySelector('[data-dropdown-toggle]');
+        const dropdownMenu = document.querySelector('[data-dropdown]');
+        const html = document.documentElement; 
+        const toggleButton = document.getElementById('darkModeToggle');
+
+        // dropdown menu
+        profileLink.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            const isHidden = dropdownMenu.classList.contains('hidden');
+            if (isHidden) {
+                dropdownMenu.classList.remove('hidden');
+                dropdownMenu.classList.add('flex');
+            } else {
+                dropdownMenu.classList.add('hidden');
+                dropdownMenu.classList.remove('flex');
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!profileLink.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.add('hidden');
+                dropdownMenu.classList.remove('flex');
+            }
+        });
+        
+        // darkmode
+        function applyDarkMode(isDark) {
+            if (isDark) {
+                html.classList.add('dark');
+                toggleButton.classList.remove('bi-moon');
+                toggleButton.classList.add('bi-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                toggleButton.classList.remove('bi-sun');
+                toggleButton.classList.add('bi-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        
+        applyDarkMode(html.classList.contains('dark'));
+
+        toggleButton.addEventListener('click', function() {
+            const isCurrentlyDark = html.classList.contains('dark');
+            applyDarkMode(!isCurrentlyDark);
+        });
+        
+    </script>
+
+    <script>
+        document.querySelector('.profile').addEventListener('click', function(e) {
+          e.preventDefault(); 
+
+          document.querySelector('.dropdown-menu').classList.toggle('active');
+      });
+
+        const name = document.querySelector('#name');
+        const slug = document.querySelector('#slug');
+
+        name.addEventListener('input', function() {
+            fetch('/perpus/checkSlug?name=' + name.value)
+            .then(response => response.json())
+            .then(data => slug.value = data.slug)
+        });
+
+        input.addEventListener("keyup", function (e) {
+        let value = input.value.trim();
+
+        if ((e.key === " " || e.key === "Enter") && value.startsWith("#") && value.length > 1) {
+            addTag(value);
+            input.value = "";
+        }
+        });
+
+        function addTag(text) {
+        const tag = document.createElement("span");
+        tag.innerHTML = `${text} <i onclick="removeTag(this)" style="font-style:normal;">x</i>`;
+        tagsContainer.appendChild(tag);
+        }
+
+        function removeTag(el) {
+        el.parentElement.remove();
+        }
+
+        document.addEventListener('trix-file-accept', function(e) {
+            e.preventDefault();
+        })
+    </script>  
+</body>
+</html>

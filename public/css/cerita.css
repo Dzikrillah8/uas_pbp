@@ -1,0 +1,200 @@
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.cerita {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    margin: 20px;
+    max-width: 500px;
+    width: auto;
+    height: auto;
+    border: none;
+    gap: 10px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.buku {
+    display: flex;
+    gap: 20px;
+}
+
+.samping {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 15px;
+    gap: 40px;
+}
+
+.judul h4 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.per {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.icon {
+    display: flex;
+}
+
+.angka {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fa812f;
+    border-radius: 20px 0 0 20px;
+}
+
+.btn:hover {
+    background-color: #ffb22c;
+}
+
+.btn-2 {
+    background-color: #fa812f;
+    border-radius: 0 20px 20px 0;
+    color: black;
+    padding-left: 10px;
+}
+
+.btn-2:hover {
+    background-color: #ffb22c;
+}
+
+.penulis {
+    text-decoration: none;
+    color: black;
+}
+
+.isi {
+    margin: 20px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.isi h5 {
+    font-weight: 700;
+}
+
+.chap {
+    display: flex;
+}
+
+.detail a {
+    text-decoration: none;
+    color: black;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: auto;
+        height: auto;
+    }
+
+    .cerita {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        margin: 20px;
+    }
+
+    /* .samping{
+
+    } */
+
+    .judul h4 {
+        font-weight: bold;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .jumlah {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .per {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .icon {
+        display: flex;
+        height: 20px;
+        gap: 5px;
+    }
+
+    .angka {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 120px;
+        height: 30px;
+
+        font-size: 15px;
+    }
+
+    .btn-2 {
+        width: 35px;
+        height: 30px;
+        padding-top: 5px;
+        font-size: 14px;
+    }
+
+    .deskripsi p {
+        font-size: 13px;
+    }
+
+    .isi {
+        margin: 20px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .isi h5 {
+        font-weight: 700;
+    }
+
+    .detail a {
+        text-decoration: none;
+        color: black;
+    }
+}
