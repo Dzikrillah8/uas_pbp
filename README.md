@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 PustakaRia
 merupakan website baca cerita online di mana pengguna dapat membaca cerita yang ditulis dan diunggah oleh pengguna lain.
 terdapat beberapa fitur lain seperti menulis cerita dan mengunggahnya, menyukai cerita, menambahkan cerita ke koleksi yang telah dibuat, berkomentar di setiap bab saat baca cerita, mencari cerita dengan filter, dan menjelajahi cerita sesuai genre
-=======
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
